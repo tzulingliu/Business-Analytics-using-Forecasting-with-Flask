@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    <h4 class="store_name">Welcome To {{ title }} {{ shift_name }} !</h4>
+{% endblock %}
+
+{% block contentpic %}
+    <p>The services provided by {{ title }} can be categorized into couples of section.
+        The time series plot below show how servies used in {{ title }} over the last three years.
+        So through out the page we will try to find the hidden pattern or information from this plot by examining each service carefully
+        and hopefully be able to find the suitable model for each service and forecast the future demand.
+    </p>
+    <div>
+        <div id="graph-time-series"></div>
+    </div>
+    <!-- Latest compiled and minified plotly.js JavaScript -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+        var graphs = {{ graph | safe }};
+        Plotly.plot("graph-time-series", graphs.data, graphs.layout || {});
+    </script>
+{% endblock %}
+
+{% block bar %}
+    <h5 class="store_name">Bar Plot</h5>
+{% endblock %}
+
+{% block barpic %}
+    <div>
+        <div id="graph-bar"></div>
+    </div>
+    <!-- Latest compiled and minified plotly.js JavaScript -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+        var bars = {{ bar | safe }};
+        Plotly.plot("graph-bar", bars.data, bars.layout || {});
+    </script>
+{% endblock %}
+
+{% block box %}
+    <h5 class="store_name">Box Plot</h5>
+{% endblock %}
+
+{% block boxpic %}
+    <div>
+        <div id="graph-box"></div>
+    </div>
+    <!-- Latest compiled and minified plotly.js JavaScript -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+        var boxs = {{ box | safe }};
+        Plotly.plot("graph-box", boxs.data, boxs.layout || {});
+    </script>
+{% endblock %}
+
+{% block heatmap %}
+    <h5 class="store_name">Heatmap</h5>
+{% endblock %}
+
+{% block heatmappic %}
+    <div>
+        <div id="graph-heatmap"></div>
+    </div>
+    <!-- Latest compiled and minified plotly.js JavaScript -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+        var heatmaps = {{ heatmap | safe }};
+        Plotly.plot("graph-heatmap", heatmaps.data, heatmaps.layout || {});
+    </script>
+{% endblock %}
+
+{% block modeling %}
+    <h5 class="store_name">Modeling</h5>
+{% endblock %}
+
+{% block modelingpic %}
+    <div>
+        <div id="graph-model"></div>
+    </div>
+    <!-- Latest compiled and minified plotly.js JavaScript -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+        var serfors = {{ sersfor | safe }};
+        Plotly.plot("graph-model", serfors.data, serfors.layout || {});
+    </script>
+{% endblock %}
+<!--    <div class="row">-->
+<!--        <div class="col-4 text">-->
+<!--            <p>Correlation between each service in {{ title }}.</p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--        <div id="graph-heatmap"></div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Latest compiled and minified plotly.js JavaScript &ndash;&gt;-->
+<!--    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>-->
+<!--    <script type="text/javascript">-->
+<!--        var heatmaps = {{ heatmap | safe }};-->
+<!--        Plotly.plot("graph-heatmap", heatmaps.data, heatmaps.layout || {});-->
+<!--    </script>-->
+
+
+
+<!--{% block contentperm %}-->
+<!--    <div>-->
+<!--        <div id="graph-hairerm"></div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Latest compiled and minified plotly.js JavaScript &ndash;&gt;-->
+<!--    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>-->
+<!--    <script type="text/javascript">-->
+<!--        var decomps = {{ decomp | safe }};-->
+<!--        Plotly.plot("graph-hairerm", decomps[2].data, decomps[2].layout || {});-->
+<!--    </script>-->
+
+<!--{% endblock %}-->

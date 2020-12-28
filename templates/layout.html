@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>Happy Hair - {{ title }}</title>
+    {% else %}
+        <title>Happy Hair</title>
+    {% endif %}
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{{ url_for('home') }}">Happy Hair Salon</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('home') }}">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{{ url_for('home') }}" id="navbarDropdownMenuLink-1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Store One to Ten
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=1) }}">Store One</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=2) }}">Store Two</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=3) }}">Store Three</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=4) }}">Store Four</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=5) }}">Store Five</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=7) }}">Store Seven</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=8) }}">Store Eight</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=9) }}">Store Nine</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=10) }}">Store Ten</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{{ url_for('home') }}" id="navbarDropdownMenuLink-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Store Eleven to Sixty
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=11) }}">Store Eleven</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=18) }}">Store Eighteen</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=20) }}">Store Twenty</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=30) }}">Store Thirty</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=45) }}">Store Forty-Five</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=47) }}">Store Forty-Seven</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=48) }}">Store Forty-Eight</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=55) }}">Store Fifty-Five</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=57) }}">Store Fifty-Seven</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=58) }}">Store Fifty-Eight</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=59) }}">Store Fifty-Nine</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=60) }}">Store Sixty</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{{ url_for('home') }}" id="navbarDropdownMenuLink-3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Store Sixty-One to Eighty
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=61) }}">Store Sixty-One</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=62) }}">Store Sixty-Two</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=64) }}">Store Sixty-Four</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=65) }}">Store Sixty-Five</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=66) }}">Store Sixty-Six</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=67) }}">Store Sixty-Seven</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=69) }}">Store Sixty-Nine</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=70) }}">Store Seventy-One</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=72) }}">Store Seventy-Two</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=73) }}">Store Seventy-Three</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=74) }}">Store Seventy-Four</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=77) }}">Store Seventy-Seven</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=79) }}">Store Seventy-Nine</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{{ url_for('home') }}" id="navbarDropdownMenuLink-4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Store Eighty-One to Hundred-Ten
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=81) }}">Store Eighty-One</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=83) }}">Store Eighty-Three</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=88) }}">Store Eighty-Eight</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=91) }}">Store Ninety-One</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=92) }}">Store Ninety-Two</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=93) }}">Store Ninety-Three</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=105) }}">Store Hundred-O-Five</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=107) }}">Store Hundred-O-Seven</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=108) }}">Store Hundred-O-Eight</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=109) }}">Store Hundred-O-Nine</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=110) }}">Store Hundred-Ten</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{{ url_for('home') }}" id="navbarDropdownMenuLink-5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Store Hundred-Eleven to Hundred-Forty
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=111) }}">Store Hundred-Eleven</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=112) }}">Store Hundred-Twelve</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=113) }}">Store Hundred-Thirteen</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=114) }}">Store Hundred-Fourteen</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=117) }}">Store Hundred-Seventeen</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=1118) }}">Store Hundred-Eighteen</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=120) }}">Store Hundred-Twenty</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=122) }}">Store Hundred-Twenty-Two</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=124) }}">Store Hundred-Twenty-Four</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=126) }}">Store Hundred-Twenty-Six</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=128) }}">Store Hundred-Twenty-Eight</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=130) }}">Store Hundred-Thirty</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=131) }}">Store Hundred-Thirty-One</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=132) }}">Store Hundred-Thirty-Two</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=135) }}">Store Hundred-Thirty-Five</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=136) }}">Store Hundred-Thirty-Six</a>
+                    <a class="dropdown-item" href="{{ url_for('stores', store_num=138) }}">Store Hundred-Thirty-Eight</a>
+                </div>
+            </li>
+            </ul>
+        </div>
+        </nav>
+        <!-- Sidebar -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <div class="w3-white">
+            <button class="w3-button w3-white w3-xlarge" onclick="w3_open()">☰</button>
+            <div class="w3-container">
+            </div>
+        </div>
+        <div class="w3-sidebar w3-bar-block w3-border-right" id="mySidebar">
+            <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+            <a class="w3-bar-item w3-button" href="{{ url_for('analysis', store_num=store_num, shift='AD') }}">All Day</a>
+            <a class="w3-bar-item w3-button" href="{{ url_for('analysis', store_num=store_num, shift='M') }}" >Morning Shift</a>
+            <a class="w3-bar-item w3-button" href="{{ url_for('analysis', store_num=store_num, shift='A') }}">Afternoon Shift</a>
+            <a class="w3-bar-item w3-button" href="{{ url_for('analysis', store_num=store_num, shift='E') }}">Evening Shift</a>
+        </div>
+        <script>
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+
+    </header>
+
+    <div class="container-fluid">
+        <div class="row title">
+            <div class="col-md-3 offset-md-5">
+                {% block title %}{% endblock %}
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-8">
+                {% block contentpic %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row title">
+            <div class="col-md-3 offset-md-2">
+                {% block bar %}{% endblock %}
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-8">
+                {% block barpic %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row title">
+            <div class="col-md-3 offset-md-2">
+                {% block box %}{% endblock %}
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-8">
+                {% block boxpic %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row title">
+            <div class="col-md-3 offset-md-2">
+                {% block heatmap %}{% endblock %}
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-8">
+                {% block heatmappic %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row title">
+            <div class="col-md-3 offset-md-2">
+                {% block modeling %}{% endblock %}
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-8">
+                {% block modelingpic %}{% endblock %}
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
